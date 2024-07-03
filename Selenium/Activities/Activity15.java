@@ -20,8 +20,6 @@ public static void main(String[] args) {
 		
 		driver.findElement(By.xpath("//button[text()='Log in']")).click();
 		
-		driver.findElement(By.xpath("//div[@id='action-confirmation']")).isDisplayed();
-		
 		String message = driver.findElement(By.xpath("//div[@id='action-confirmation']")).getText();
 		
 		System.out.println("Login message: "+ message);
