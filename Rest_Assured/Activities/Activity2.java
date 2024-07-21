@@ -68,7 +68,7 @@ public class Activity2 {
 	}
 	
 	@Test(priority=3)
-	public void deleteUser() {
+	public void deleteUser() throws IOException {
 		
 		Response response =
 				given().contentType("application/json").
