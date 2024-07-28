@@ -6,6 +6,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -16,7 +17,7 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 
 public class Activity1 {
 	
-	//Declare driver
+		//Declare driver
 		AppiumDriver driver;
 		
 		@BeforeClass
@@ -38,7 +39,7 @@ public class Activity1 {
 		}
 		
 		@Test
-		public void additionTest() {
+		public void multiplicationTest() {
 			
 			driver.findElement(AppiumBy.id("com.sec.android.app.popupcalculator:id/calc_keypad_btn_06")).click();
 			driver.findElement(AppiumBy.accessibilityId("Multiplication")).click();
@@ -46,6 +47,11 @@ public class Activity1 {
 			driver.findElement(AppiumBy.accessibilityId("Equal")).click();
 			String result = driver.findElement(AppiumBy.id("com.sec.android.app.popupcalculator:id/calc_edt_formula")).getText();
 			Assert.assertEquals(result,"54 Calculation result");
+		}
+		
+		@AfterClass
+		public void tearDown() {
+			driver.quit();
 		}
 
 }
