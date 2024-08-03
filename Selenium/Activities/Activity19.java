@@ -1,0 +1,42 @@
+package com.example.fst_m1_selenium;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Activity19 {
+
+	public static void main(String[] args) {
+        // Set up Chrome driver
+        WebDriverManager.chromedriver().setup();
+        // Create a new instance of the Chrome driver
+        WebDriver driver = new ChromeDriver();
+        
+        // Open the page
+        driver.get("https://v1.training-support.net/selenium/javascript-alerts");
+        // Print the title of the page
+        System.out.println("Home page title: " + driver.getTitle());
+
+        // Find and click the button to open the alert
+        driver.findElement(By.id("confirm")).click();
+
+        // Switch focus to the alert
+        Alert confirmAlert = driver.switchTo().alert();
+
+        // Print the text in the alert
+        String alertText = confirmAlert.getText();
+        System.out.println("Text in alert: " + alertText);
+
+        // Close the alert by clicking OK
+        confirmAlert.accept();
+
+        // Can also close the alert by clicking Cancel
+        // confirmAlert.dismiss();
+
+        // Close the browser
+        driver.quit();
+    }
+}
