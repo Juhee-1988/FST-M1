@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+    <test name="Test">
+    <groups>
+        <run>
+            <include name="HeaderTests" />
+            <!--<exclude name="ButtonTests" />-->
+        </run>
+    </groups>
+        <classes>
+            <class name="activities.Activity5"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
